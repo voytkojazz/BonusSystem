@@ -16,3 +16,7 @@ Q.idea/sonarlint/securityhotspotstore/4/4/442292b8a7efeabbe4cc176709b833b1792140
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 w
 G.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec,8\6\863e0292fd7e9b3e74dafd6cc01f73ba76346482
+X
+(src/main/java/ua/rostyslav/Employee.java,0\d\0d84b8481206274b12eddec3e146a93ac4eeb86c
+Z
+*src/main/java/ua/rostyslav/TeamLeader.java,d\8\d8fa28b6b5b682868a8646fcaf0c9a8f76bfae23
