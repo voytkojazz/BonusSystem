@@ -20,3 +20,9 @@ X
 (src/main/java/ua/rostyslav/Employee.java,0\d\0d84b8481206274b12eddec3e146a93ac4eeb86c
 Z
 *src/main/java/ua/rostyslav/TeamLeader.java,d\8\d8fa28b6b5b682868a8646fcaf0c9a8f76bfae23
+^
+.src/main/java/ua/rostyslav/NormalEmployee.java,6\a\6a999fb1d7d4bc10a62b826de49d63e7f668330f
+^
+.src/main/java/ua/rostyslav/BonusDecorator.java,6\4\64ac9b4238ebb5ba39db634cd07d419b6c78761e
+U
+%src/main/java/ua/rostyslav/Bonus.java,d\0\d060fd475fefb85b3dd194726b5377da8ca0b571
