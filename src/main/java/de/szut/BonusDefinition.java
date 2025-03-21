@@ -1,4 +1,4 @@
-package ua.rostyslav;
+package de.szut;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

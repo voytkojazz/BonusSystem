@@ -1,11 +1,12 @@
-package ua.rostyslav;
+package de.szut;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class TeamLeader implements Employee {
+public class NormalEmployee implements Employee {
+
     private final String name;
     private final int yearsAtCompany;
     private final int performanceScore;
@@ -14,6 +15,6 @@ public class TeamLeader implements Employee {
 
     @Override
     public boolean isTeamLeader() {
-        return true;
+        return false;
     }
 }

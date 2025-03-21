@@ -1,4 +1,4 @@
-package ua.rostyslav;
+package de.szut;
 
 public interface Employee {
     String getName();
