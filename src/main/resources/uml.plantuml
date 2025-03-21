@@ -9,6 +9,10 @@ interface Employee {
   + isTeamLeader(): boolean
 }
 
+class TeamLeader implements Employee
+
+class NormalEmployee implements Employee
+
 class BonusService {
   - maxBonusAmount: double
   - minBonusAmount: double
