@@ -1,0 +1,96 @@
+@startuml
+
+interface Employee {
+  + getName(): String
+  + getYearsAtCompany(): int
+  + getPerformanceScore(): int
+  + getCompletedProjects(): int
+  + getAbsenceDays(): int
+  + isTeamLeader(): boolean
+}
+
+class BonusService {
+  - maxBonusAmount: double
+  - minBonusAmount: double
+  + getMaxBonusAmount(): double
+  + getMinBonusAmount(): double
+}
+
+class BonusCalculator {
+  - bonusService: BonusService
+  + BonusCalculator(bonusService: BonusService)
+  + calculateBonus(employee: Employee): double
+  - applyCompanyRestrictions(calculatedBonus: double): double
+}
+
+' Decorator Pattern
+interface Bonus {
+  + calculate(employee: Employee): double
+}
+
+class BaseBonus implements Bonus {
+  - baseAmount: double
+  + BaseBonus(baseAmount: double)
+  + calculate(employee: Employee): double
+}
+
+abstract class BonusDecorator implements Bonus {
+  # decoratedBonus: Bonus
+  + BonusDecorator(decoratedBonus: Bonus)
+  + calculate(employee: Employee): double
+}
+
+class SeniorityBonus extends BonusDecorator {
+  - intervalYears: int
+  - amountPerInterval: double
+  + SeniorityBonus(decoratedBonus: Bonus, intervalYears: int, amountPerInterval: double)
+  + calculate(employee: Employee): double
+}
+
+class ProjectCompletionBonus extends BonusDecorator {
+  - bonusPerProject: double
+  + ProjectCompletionBonus(decoratedBonus: Bonus, bonusPerProject: double)
+  + calculate(employee: Employee): double
+}
+
+class TeamLeaderBonus extends BonusDecorator {
+  - leaderBonusAmount: double
+  + TeamLeaderBonus(decoratedBonus: Bonus, leaderBonusAmount: double)
+  + calculate(employee: Employee): double
+}
+
+class LowAbsenceBonus extends BonusDecorator {
+  - firstThreshold: int
+  - secondThreshold: int
+  - firstLevelBonus: double
+  - secondLevelBonus: double
+  + LowAbsenceBonus(decoratedBonus: Bonus, firstThreshold: int, secondThreshold: int, firstLevelBonus: double, secondLevelBonus: double)
+  + calculate(employee: Employee): double
+}
+
+class HighAbsencePenalty extends BonusDecorator {
+  - firstThreshold: int
+  - secondThreshold: int
+  - firstLevelPenaltyFactor: double
+  - secondLevelPenaltyFactor: double
+  + HighAbsencePenalty(decoratedBonus: Bonus, firstThreshold: int, secondThreshold: int, firstLevelPenaltyFactor: double, secondLevelPenaltyFactor: double)
+  + calculate(employee: Employee): double
+}
+
+class PerformanceMultiplier extends BonusDecorator {
+  - lowThreshold: int
+  - highThreshold: int
+  - lowFactor: double
+  - mediumFactor: double
+  - highFactor: double
+  + PerformanceMultiplier(decoratedBonus: Bonus, lowThreshold: int, highThreshold: int, lowFactor: double, mediumFactor: double, highFactor: double)
+  + calculate(employee: Employee): double
+}
+
+' Relationships
+BonusCalculator --> BonusService
+BonusCalculator --> Bonus
+BonusDecorator o--> Bonus
+BonusCalculator ..> Employee
+
+@enduml
