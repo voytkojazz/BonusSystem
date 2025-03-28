@@ -18,7 +18,8 @@ public class LowAbsenceBonus extends BonusDecorator {
 
 
     @Override
-    public double calculate(Employee employee, double currentBonus) {
+    public double calculate(Employee employee) {
+        var currentBonus = decoratedBonus.calculate(employee);
         return 0;
     }
 }

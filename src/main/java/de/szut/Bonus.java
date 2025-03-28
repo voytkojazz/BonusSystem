@@ -2,5 +2,5 @@ package de.szut;
 
 public interface Bonus {
 
-    double calculate(Employee employee, double currentBonus);
+    double calculate(Employee employee);
 }

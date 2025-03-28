@@ -13,5 +13,4 @@ public interface Employee {
 
     boolean isTeamLeader();
 
-    double getBonus();
 }

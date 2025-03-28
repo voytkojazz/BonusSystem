@@ -16,7 +16,8 @@ public class HighAbsencePenalty extends BonusDecorator {
         }
 
         @Override
-        public double calculate(Employee employee, double currentBonus) {
+        public double calculate(Employee employee) {
+                double currentBonus = decoratedBonus.calculate(employee);
                 return 0;
         }
 

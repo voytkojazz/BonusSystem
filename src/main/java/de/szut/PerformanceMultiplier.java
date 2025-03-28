@@ -4,20 +4,20 @@ import java.util.Optional;
 
 public class PerformanceMultiplier extends BonusDecorator {
 
-    private static final int LOW_FACTOR = 1;
-    private static final int MEDIUM_FACTOR = 2;
-    private static final int HIGH_FACTOR = 3;
+    private static final int LOW_FACTOR = 7;
+    private static final int MEDIUM_FACTOR = 12;
+    private static final int HIGH_FACTOR = 17;
 
     public PerformanceMultiplier(Bonus decoratedBonus) {
         super(decoratedBonus);
     }
 
     @Override
-    public double calculate(Employee employee, double currentBonus) {
-        double calculatedBonus =  Optional.of(employee.getPerformanceScore())
+    public double calculate(Employee employee) {
+        var currentBonus = decoratedBonus.calculate(employee);
+        return Optional.of(employee.getPerformanceScore())
                 .map(performanceScore -> calculatePerformanceBonus(currentBonus, performanceScore))
                 .orElse(currentBonus);
-        return decoratedBonus.calculate(employee, calculatedBonus);
     }
 
     private static Double calculatePerformanceBonus(double currentBonus, Integer performanceScore) {
