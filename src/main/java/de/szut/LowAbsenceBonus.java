@@ -1,11 +1,11 @@
 package de.szut;
 
 public class LowAbsenceBonus extends BonusDecorator {
-    private int firstThreshold;
-    private int secondThreshold;
-    private double firstLevelBonus;
-    private double secondLevelBonus;
-    private Bonus decoratedBonus;
+    private final int firstThreshold;
+    private final int secondThreshold;
+    private final double firstLevelBonus;
+    private final double secondLevelBonus;
+    private final Bonus decoratedBonus;
 
     public LowAbsenceBonus(Bonus decoratedBonus, int firstThreshold, int secondThreshold, double firstLevelBonus, double secondLevelBonus) {
         super(decoratedBonus);
@@ -20,6 +20,13 @@ public class LowAbsenceBonus extends BonusDecorator {
     @Override
     public double calculate(Employee employee) {
         var currentBonus = decoratedBonus.calculate(employee);
-        return 0;
+        if (employee.getAbsenceDays() <= this.firstThreshold) {
+            return currentBonus + this.firstLevelBonus;
+        }
+        if (employee.getAbsenceDays() <= this.secondThreshold) {
+            return currentBonus + this.secondLevelBonus;
+        }
+
+        return currentBonus;
     }
 }
