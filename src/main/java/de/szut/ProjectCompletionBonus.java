@@ -1,8 +1,10 @@
 package de.szut;
 
-public class ProjectCompletionBonus extends BonusDecorator{
+import java.util.Optional;
 
-    private double bonusPerProject;
+public class ProjectCompletionBonus extends BonusDecorator {
+
+    private final double bonusPerProject;
 
     public ProjectCompletionBonus(Bonus decoratorBonus, double bonusPerProject){
         super(decoratorBonus);
@@ -11,6 +13,11 @@ public class ProjectCompletionBonus extends BonusDecorator{
     }
     @Override
     public double calculate(Employee employee) {
-        return 0;
+        double currentBonus = decoratedBonus.calculate(employee);
+        return Optional.ofNullable(employee)
+                .map(Employee::getCompletedProjects)
+                .map(completedProject -> completedProject * 50)
+                .map(calculated -> calculated + currentBonus)
+                .orElse(currentBonus);
     }
 }

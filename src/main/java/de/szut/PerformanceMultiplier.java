@@ -19,7 +19,8 @@ public class PerformanceMultiplier extends BonusDecorator {
     @Override
     public double calculate(Employee employee) {
         var currentBonus = decoratedBonus.calculate(employee);
-        return Optional.of(employee.getPerformanceScore())
+        return Optional.ofNullable(employee)
+                .map(Employee::getPerformanceScore)
                 .map(performanceScore -> calculatePerformanceBonus(currentBonus, performanceScore))
                 .map(calculated -> new BigDecimal(String.format("%.2f", calculated)).doubleValue())
                 .orElse(currentBonus);

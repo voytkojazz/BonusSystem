@@ -31,3 +31,9 @@ S
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+a
+1src/test/java/de/szut/HighAbsencePenaltyTest.java,5\3\53511137e9555658162710e6a083336d5e239855
+a
+1src/main/java/de/szut/ProjectCompletionBonus.java,f\6\f6ac535a666a970e13d6ca023d59ad3757d9861a
+e
+5src/test/java/de/szut/ProjectCompletionBonusTest.java,a\3\a3467343ef278c65cbee0088021b75f4c90f51f4
