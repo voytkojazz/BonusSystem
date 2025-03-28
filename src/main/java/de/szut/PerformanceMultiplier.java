@@ -1,5 +1,6 @@
 package de.szut;
 
+import java.math.BigDecimal;
 import java.util.Optional;
 
 public class PerformanceMultiplier extends BonusDecorator {
@@ -7,9 +8,9 @@ public class PerformanceMultiplier extends BonusDecorator {
     protected static final int LOWER_BOUND = 33;
     protected static final int MEDIUM_BOUND = 66;
 
-    private static final int LOW_FACTOR = 7;
-    private static final int MEDIUM_FACTOR = 12;
-    private static final int HIGH_FACTOR = 17;
+    protected static final int LOW_FACTOR = 7;
+    protected static final int MEDIUM_FACTOR = 12;
+    protected static final int HIGH_FACTOR = 17;
 
     public PerformanceMultiplier(Bonus decoratedBonus) {
         super(decoratedBonus);
@@ -20,6 +21,7 @@ public class PerformanceMultiplier extends BonusDecorator {
         var currentBonus = decoratedBonus.calculate(employee);
         return Optional.of(employee.getPerformanceScore())
                 .map(performanceScore -> calculatePerformanceBonus(currentBonus, performanceScore))
+                .map(calculated -> new BigDecimal(String.format("%.2f", calculated)).doubleValue())
                 .orElse(currentBonus);
     }
 
