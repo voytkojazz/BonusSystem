@@ -12,4 +12,6 @@ public interface Employee {
     int getAbsenceDays();
 
     boolean isTeamLeader();
+
+    double getBonus();
 }
