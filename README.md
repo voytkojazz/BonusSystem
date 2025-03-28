@@ -29,6 +29,10 @@ Die zweite Abstufung, ab 25 Fehltage, bei den es einen Abzug von 100 € gibt.
 ### Performance Bonus
 Der Performance Bonus enthält drei Faktoren, mit dem der Bonus multipliziert wird. 
 Dabei ist der niedrige Faktor 7%, der mittlere Faktor 12% und der hohe Faktor 17%.
+Der Performance Score kann dabei maximal 100 betragen.
+Bei einem Performance-Score von weniger als 33 wird der niedrige Faktor verwendet.
+Bei einem Performance-Score von mehr als 66 wird der hohe Faktor verwendet.
+Dazwischen wird der mittlere Faktor verwendet.
 
 ### Höchst- und Mindestbonus
 Der Höchstbonus beträgt 2000 € und der Mindestbonus 500 €.
