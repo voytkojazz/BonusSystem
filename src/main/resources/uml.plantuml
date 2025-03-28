@@ -29,7 +29,7 @@ class BonusCalculator {
 
 ' Decorator Pattern
 interface Bonus {
-  + calculate(employee: Employee): double
+  + calculate(employee: Employee, currentBonus: double): double
 }
 
 class BaseBonus implements Bonus {
