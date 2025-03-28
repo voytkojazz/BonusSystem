@@ -1,10 +1,10 @@
 package de.szut;
 
 public class HighAbsencePenalty extends BonusDecorator {
-        private int firstThreshold;
-        private int secondThreshold;
-        private double firstLevelPenaltyFactor;
-        private double secondLevelPenaltyFactor;
+        private final int firstThreshold;
+        private final int secondThreshold;
+        private final double firstLevelPenaltyFactor;
+        private final double secondLevelPenaltyFactor;
 
         public HighAbsencePenalty(Bonus decoratedBonus, int firstThreshold, int secondThreshold,
                                   double firstLevelPenaltyFactor, double secondLevelPenaltyFactor) {
@@ -18,6 +18,13 @@ public class HighAbsencePenalty extends BonusDecorator {
         @Override
         public double calculate(Employee employee) {
                 double currentBonus = decoratedBonus.calculate(employee);
-                return 0;
+                if (employee.getAbsenceDays() >= this.secondThreshold) {
+                        return currentBonus - this.secondLevelPenaltyFactor;
+                }
+                if (employee.getAbsenceDays() >= this.firstThreshold) {
+                        return currentBonus - this.firstLevelPenaltyFactor;
+                }
+
+                return currentBonus;
         }
 }
