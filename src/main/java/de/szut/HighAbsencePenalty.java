@@ -20,6 +20,4 @@ public class HighAbsencePenalty extends BonusDecorator {
                 double currentBonus = decoratedBonus.calculate(employee);
                 return 0;
         }
-
-
 }
