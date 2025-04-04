@@ -5,18 +5,17 @@ public class TeamLeaderBonus extends BonusDecorator {
     private double leaderBonusAmount;
 
     public TeamLeaderBonus(Bonus decoratedBonus, double leaderBonusAmount) {
-    super(decoratedBonus);
-    this.leaderBonusAmount = leaderBonusAmount;
-
+        super(decoratedBonus);
+        this.leaderBonusAmount = leaderBonusAmount;
     }
 
     @Override
     public double calculate(Employee employee) {
-        int yearsAtCompany = employee.getYearsAtCompany();
-        int factor = yearsAtCompany / 3;
-        return leaderBonusAmount * factor;
+        double currentBonus = this.decoratedBonus.calculate(employee);
+        if (!employee.isTeamLeader()) {
+            return currentBonus;
+        }
+        return currentBonus + this.leaderBonusAmount;
     }
-
-
 
 }
