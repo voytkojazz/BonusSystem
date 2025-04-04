@@ -39,23 +39,25 @@ Der Höchstbonus beträgt 2000 € und der Mindestbonus 500 €.
 
 ## Beispielrechnung
 ### Mitarbeiter A:
-- Grundbonus: 300
-- 6 Jahre im Unternehmen: 300
-- 2 Projekte: 100
-- Kein Teamlead: 0
-- 2 Fehltage: 200
-- Performance Faktor: mittel
-- Performance Bonus: 600 Euro
-- mittlerer Faktor: 12%
-- `800 * 1,12 = 896`
-- `500 < 896 < 2000` Ok
+- Grundbonus: 300 €
+- Betriebszugehörigkeit: 6 Jahre -> 1 vollendete 5-Jahres-Periode -> 1 * 150 € = 150 €
+- Abgeschlossene Projekte: 2 -> 2 * 50 € = 100 €
+- Position: Kein Teamlead -> 0 €
+- Fehltage: 2 -> +200 € Bonus (da <= 3 Tage)
+- Performance Score Annahme: 33-66 -> mittlerer Faktor (12%)
+- **Berechnungsbasis (Summe):** 300 € (Grundbonus) + 150 € (Seniority) + 100 € (Projekte) + 0 € (Teamlead) + 200 € (Fehlzeiten) = 750 €
+- **Anwendung Performance Faktor:** 750 € * 1,12 = 840 €
+- **Prüfung Höchst-/Mindestbonus:** 500 € <= 840 € <= 2000 € -> OK
+- **Finaler Bonus:** 840 €
 
 ### Mitarbeiter B:
-- 12 Jahre im Unternehmen: 600
-- Teamlead: 200
-- 5 Projekte: 250
-- 16 Fehltage: -50
-- Performance Faktor: hoch
-- Performance Bonus: 1000
-- `1300 * 1.17 = 1521`
-- `500 < 1521 < 2000` OK
+- Grundbonus: 300 €
+- Betriebszugehörigkeit: 12 Jahre -> 2 vollendete 5-Jahres-Perioden -> 2 * 150 € = 300 €
+- Abgeschlossene Projekte: 5 -> 5 * 50 € = 250 €
+- Position: Teamlead -> +200 €
+- Fehltage: 16 -> -50 € Abzug (da 15-24 Tage)
+- Performance Score Annahme: > 66 -> hoher Faktor (17%)
+- **Berechnungsbasis (Summe):** 300 € (Grundbonus) + 300 € (Seniority) + 250 € (Projekte) + 200 € (Teamlead) - 50 € (Fehlzeiten) = 1000 €
+- **Anwendung Performance Faktor:** 1000 € * 1,17 = 1170 €
+- **Prüfung Höchst-/Mindestbonus:** 500 € <= 1170 € <= 2000 € -> OK
+- **Finaler Bonus:** 1170 €
