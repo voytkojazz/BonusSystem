@@ -17,7 +17,7 @@ public class BonusCalculator {
     protected static final double PROJECT_BONUS_PER_PROJECT = 50.0;
 
     // Team leader bonus constant
-    protected static final double TEAM_LEADER_BONUS = 200.0;
+    protected static final double TEAM_LEADER_BONUS = 150;
 
     // Low absence bonus constants
     protected static final int LOW_ABSENCE_FIRST_THRESHOLD = 3;

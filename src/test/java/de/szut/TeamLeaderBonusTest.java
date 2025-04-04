@@ -11,7 +11,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class TeamLeaderBonusTest {
+class TeamLeaderBonusTest {
 
     @Mock
     Bonus decoratedBonus;
@@ -33,7 +33,7 @@ public class TeamLeaderBonusTest {
 
         double calculate = teamLeaderBonus.calculate(employee);
 
-        assertThat(calculate).isEqualTo(0);
+        assertThat(calculate).isZero();
 
     }
 
@@ -43,7 +43,7 @@ public class TeamLeaderBonusTest {
 
         double calculate = teamLeaderBonus.calculate(employee);
 
-        assertThat(calculate).isEqualTo(0);
+        assertThat(calculate).isZero();
 
     }
 
