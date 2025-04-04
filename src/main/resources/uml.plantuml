@@ -13,7 +13,7 @@ class TeamLeader implements Employee
 
 class NormalEmployee implements Employee
 
-class BonusService {
+enum BonudDefinition {
   - maxBonusAmount: double
   - minBonusAmount: double
   + getMaxBonusAmount(): double
