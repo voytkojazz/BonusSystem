@@ -12,6 +12,11 @@ public class TeamLeaderBonus extends BonusDecorator {
 
     @Override
     public double calculate(Employee employee) {
-        return 0;
+        int yearsAtCompany = employee.getYearsAtCompany();
+        int factor = yearsAtCompany / 3;
+        return leaderBonusAmount * factor;
     }
+
+
+
 }
