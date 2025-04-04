@@ -18,7 +18,7 @@ class PerformanceMultiplierTest {
     Employee employee;
 
     @Test
-    void testCalculateWhenLowFactor() {
+    void shouldCalculateCorrectBonusForEmployeeWithLowPerformance() {
         PerformanceMultiplier performanceMultiplier = new PerformanceMultiplier(decoratedBonus);
         when(decoratedBonus.calculate(employee)).thenReturn(100.0);
         when(employee.getPerformanceScore()).thenReturn(PerformanceMultiplier.LOWER_BOUND);
@@ -30,7 +30,7 @@ class PerformanceMultiplierTest {
     }
 
     @Test
-    void testCalculateWhenMediumFactor() {
+    void shouldCalculateCorrectBonusForEmployeeWithMediumPerformance() {
         PerformanceMultiplier performanceMultiplier = new PerformanceMultiplier(decoratedBonus);
         when(decoratedBonus.calculate(employee)).thenReturn(100.0);
         when(employee.getPerformanceScore()).thenReturn(PerformanceMultiplier.MEDIUM_BOUND);
@@ -41,7 +41,7 @@ class PerformanceMultiplierTest {
     }
 
     @Test
-    void testCalculateWhenHighFactor() {
+    void shouldCalculateCorrectBonusForEmployeeWithHighPerformance() {
         PerformanceMultiplier performanceMultiplier = new PerformanceMultiplier(decoratedBonus);
         when(decoratedBonus.calculate(employee)).thenReturn(100.0);
         when(employee.getPerformanceScore()).thenReturn(77);
