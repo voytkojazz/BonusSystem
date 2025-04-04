@@ -15,6 +15,12 @@ public class SeniorityBonus extends BonusDecorator {
 
     @Override
     public double calculate(Employee employee) {
-        return 0;
+        var currentBonus = this.decoratedBonus.calculate(employee);
+        if (employee.getYearsAtCompany() == 0) {
+            return currentBonus;
+        }
+        var intervals = employee.getYearsAtCompany() / this.intervalYears;
+
+        return currentBonus + (intervals * amountPerInterval);
     }
 }
