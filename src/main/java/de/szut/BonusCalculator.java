@@ -34,15 +34,6 @@ public class BonusCalculator implements Bonus {
 
     }
 
-    /**
-     * Constructs a BonusCalculator with custom configuration.
-     * This constructor allows for custom configuration of the bonus chain.
-     *
-     * @param customBonusChain The custom bonus chain to use
-     */
-    public BonusCalculator(Bonus customBonusChain) {
-        this.bonusChain = customBonusChain;
-    }
 
     /**
      * Calculates the bonus for the given employee.
