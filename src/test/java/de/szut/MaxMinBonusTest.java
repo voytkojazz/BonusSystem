@@ -19,13 +19,11 @@ class MaxMinBonusTest {
     private Employee employee;
 
     private MaxMinBonus underTest;
-    // Using explicit values for testing rather than enum values
     private final double minBonus = 500.0;
     private final double maxBonus = 2000.0;
 
     @BeforeEach
     void setUp() {
-        // Use the constructor with explicit values for testing
         underTest = new MaxMinBonus(decoratedBonus, minBonus, maxBonus);
     }
 
